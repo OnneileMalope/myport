@@ -1,6 +1,3 @@
-/* =============================================
-   SCROLL REVEAL
-   ============================================= */
 const revealElements = document.querySelectorAll(
   '.hero-badge, .hero-title, .hero-sub, .hero-cta, .hero-stats, .section-header, .project-card, .contact-inner'
 );
@@ -11,7 +8,7 @@ const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        // Stagger children within groups
+        
         setTimeout(() => {
           entry.target.classList.add('visible');
         }, 60 * i);
@@ -24,9 +21,7 @@ const revealObserver = new IntersectionObserver(
 
 revealElements.forEach(el => revealObserver.observe(el));
 
-/* =============================================
-   ACTIVE NAV LINK ON SCROLL
-   ============================================= */
+
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -48,9 +43,7 @@ const sectionObserver = new IntersectionObserver(
 
 sections.forEach(section => sectionObserver.observe(section));
 
-/* =============================================
-   SMOOTH SCROLL — OFFSET FOR FIXED NAV
-   ============================================= */
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
@@ -62,9 +55,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* =============================================
-   NAV BORDER ON SCROLL
-   ============================================= */
+
 const nav = document.querySelector('.nav');
 
 window.addEventListener('scroll', () => {
